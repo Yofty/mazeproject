@@ -1,6 +1,4 @@
-#include <stdint.h>
 #include "maze.h"
-#include <SDL2/SDL.h>
 
 /**
  * initSDL: initialize sdl
@@ -20,6 +18,16 @@ bool initSDL(void)
 		printf("SDL could not initialize! SDL_Error: %s\n",
 		       SDL_GetError());
 		success = false;
+	}
+	window = SDL_CreateWindow("milka",SDL_WINDOWPOS_UNDEFINED,
+			          SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
+			  	  SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+
+	if (window == NULL)
+	{
+		printf("window  could not be created! SDL Error: %s\n",
+                       SDL_GetError());
+                success = false;
 	}
 
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -51,7 +59,6 @@ void updateRenderer(bool textured)
 {
 	int x, y; /* loop counters */
 
-	/* draw buffer to renderer */
 	if (textured)
 	{
 		SDL_UpdateTexture(texture, NULL, buffer, SCREEN_WIDTH * 4);

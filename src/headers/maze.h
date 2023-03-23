@@ -10,15 +10,15 @@
 #define MAP_HEIGHT 24
 #define MAP_CHAR_COUNT 1275
 
-#include <sys/types.h>
-#include <stdint.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <math.h>

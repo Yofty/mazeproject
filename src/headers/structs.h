@@ -2,10 +2,10 @@
 #define STRUCTS_H
 
 /**
- *
- *
- *
- *
+ * struct point_s - data structure for XY point coordinates of type double
+ * @x: X coordinate
+ * @y: Y coordinate
+ * Description: struct point
  */
 typedef struct point_s
 {
